@@ -8,7 +8,7 @@ const router = Router();
 router.get('/role',authMiddleware(['admin']),getRoles);
 router.post('/role',createRole);
 
-router.get('/user',getUsers);
+router.get('/user',authMiddleware(['admin']),getUsers);
 router.post('/user',createUser);
 router.post('/login',login);
 // router.put('/role/:id');
